@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator" role="region" aria-label="Simple calculator">
+        <input type="text" id="display" class="display" readonly aria-label="Calculator display" />
+        <div class="buttons-grid">
+            <!-- Digits -->
+            <button data-action="digit" data-value="7" aria-label="7" role="button">7</button>
+            <button data-action="digit" data-value="8" aria-label="8" role="button">8</button>
+            <button data-action="digit" data-value="9" aria-label="9" role="button">9</button>
+            <button data-action="operator" data-value="/" aria-label="divide" role="button">÷</button>
+
+            <button data-action="digit" data-value="4" aria-label="4" role="button">4</button>
+            <button data-action="digit" data-value="5" aria-label="5" role="button">5</button>
+            <button data-action="digit" data-value="6" aria-label="6" role="button">6</button>
+            <button data-action="operator" data-value="*" aria-label="multiply" role="button">×</button>
+
+            <button data-action="digit" data-value="1" aria-label="1" role="button">1</button>
+            <button data-action="digit" data-value="2" aria-label="2" role="button">2</button>
+            <button data-action="digit" data-value="3" aria-label="3" role="button">3</button>
+            <button data-action="operator" data-value="-" aria-label="subtract" role="button">−</button>
+
+            <button data-action="digit" data-value="0" aria-label="0" role="button">0</button>
+            <button data-action="decimal" data-value="." aria-label="decimal point" role="button">.</button>
+            <button data-action="clear" data-value="C" aria-label="clear" role="button">C</button>
+            <button data-action="operator" data-value="+" aria-label="add" role="button">+</button>
+
+            <!-- Additional functional buttons to reach 20 -->
+            <button data-action="operator" data-value="(" aria-label="open parenthesis" role="button">(</button>
+            <button data-action="operator" data-value=")" aria-label="close parenthesis" role="button">)</button>
+            <button data-action="operator" data-value="%" aria-label="percentage" role="button">%</button>
+            <button data-action="equals" data-value="=" aria-label="equals" role="button">=</button>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>

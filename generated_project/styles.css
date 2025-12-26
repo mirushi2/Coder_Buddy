@@ -1,0 +1,144 @@
+/*
+ * Calculator Styles
+ * Defines root variables, layout, and responsive design.
+ */
+
+:root {
+  /* Colors */
+  --color-bg: #f5f5f5;                /* Page background */
+  --color-calculator-bg: #ffffff;    /* Calculator container */
+  --color-display-bg: #eaeaea;       /* Display background */
+  --color-display-border: #cccccc;   /* Display border */
+  --color-button-bg: #fafafa;        /* Default button background */
+  --color-button-hover: #e0e0e0;      /* Hover state */
+  --color-button-active: #d0d0d0;     /* Active (pressed) state */
+  --color-operator-bg: #ff9500;      /* Operator button background */
+  --color-operator-hover: #e08900;    /* Operator hover */
+  --color-operator-active: #c07a00;   /* Operator active */
+  --color-text: #333333;             /* General text */
+  --color-operator-text: #ffffff;    /* Operator text */
+
+  /* Typography */
+  --font-size-base: 1rem;            /* Base font size (16px) */
+  --font-size-display: 2rem;         /* Display font size */
+  --font-size-button: 1.125rem;      /* Button font size */
+
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+}
+
+/* Global page styling */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Calculator container */
+.calculator {
+  max-width: 320px;
+  width: 100%;
+  background-color: var(--color-calculator-bg);
+  border-radius: var(--spacing-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-md);
+  box-sizing: border-box;
+}
+
+/* Display input */
+.display {
+  width: 100%;
+  padding: var(--spacing-sm);
+  font-size: var(--font-size-display);
+  text-align: right;
+  border: 1px solid var(--color-display-border);
+  border-radius: var(--spacing-sm);
+  background-color: var(--color-display-bg);
+  box-sizing: border-box;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Buttons grid */
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-sm);
+}
+
+/* Base button styling */
+.buttons-grid button {
+  padding: var(--spacing-sm);
+  font-size: var(--font-size-button);
+  background-color: var(--color-button-bg);
+  border: 1px solid var(--color-display-border);
+  border-radius: var(--spacing-sm);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.buttons-grid button:hover {
+  background-color: var(--color-button-hover);
+}
+
+.buttons-grid button:active {
+  background-color: var(--color-button-active);
+  transform: scale(0.97);
+}
+
+/* Operator button styling */
+.buttons-grid button.operator,
+.buttons-grid button[data-action="operator"] {
+  background-color: var(--color-operator-bg);
+  color: var(--color-operator-text);
+  border: none;
+}
+
+.buttons-grid button.operator:hover,
+.buttons-grid button[data-action="operator"]:hover {
+  background-color: var(--color-operator-hover);
+}
+
+.buttons-grid button.operator:active,
+.buttons-grid button[data-action="operator"]:active {
+  background-color: var(--color-operator-active);
+}
+
+/* Equals button – give it a distinct look (optional) */
+.buttons-grid button[data-action="equals"] {
+  background-color: var(--color-operator-bg);
+  color: var(--color-operator-text);
+}
+
+.buttons-grid button[data-action="equals"]:hover {
+  background-color: var(--color-operator-hover);
+}
+
+.buttons-grid button[data-action="equals"]:active {
+  background-color: var(--color-operator-active);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .calculator {
+    padding: var(--spacing-sm);
+  }
+
+  .display {
+    font-size: 1.5rem;
+    padding: calc(var(--spacing-sm) / 2);
+  }
+
+  .buttons-grid button {
+    padding: calc(var(--spacing-sm) / 2);
+    font-size: 1rem;
+  }
+}

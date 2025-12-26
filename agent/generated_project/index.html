@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ColorfulTodo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="app-header">
+        <h1>ColorfulTodo</h1>
+        <button id="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+            <!-- Placeholder for theme icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="12" r="5" fill="currentColor" />
+                <path d="M12 1V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 21V23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4.22 4.22L5.64 5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M18.36 18.36L19.78 19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M1 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M21 12H23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4.22 19.78L5.64 18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </header>
+
+    <main class="app-main">
+        <form id="todo-form" aria-label="Add new todo">
+            <input id="new-todo-title" type="text" placeholder="What needs to be done?" required aria-label="Todo title" />
+            <input id="new-todo-due" type="date" aria-label="Due date" />
+            <button type="submit" aria-label="Add todo">Add</button>
+        </form>
+
+        <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+
+        <div class="filters" role="group" aria-label="Todo filters">
+            <button id="filter-all" aria-pressed="true">All</button>
+            <button id="filter-active" aria-pressed="false">Active</button>
+            <button id="filter-completed" aria-pressed="false">Completed</button>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <small>Made with ❤️ by the ColorfulTodo team.</small>
+    </footer>
+</body>
+</html>
